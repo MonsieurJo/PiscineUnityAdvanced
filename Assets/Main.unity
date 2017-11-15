@@ -573,6 +573,7 @@ GameObject:
   - component: {fileID: 1533356310}
   - component: {fileID: 1533356309}
   - component: {fileID: 1533356308}
+  - component: {fileID: 1533356311}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -586,13 +587,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1533356306}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0.17618598, z: -0, w: 0.9843569}
   m_LocalPosition: {x: -195, y: 62.934, z: -540.5}
   m_LocalScale: {x: 112.985886, y: 4.07437, z: 1}
   m_Children: []
   m_Father: {fileID: 1182246059}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -20.295, z: 0}
 --- !u!23 &1533356308
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -631,7 +632,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1533356306}
-  m_Material: {fileID: 13400000, guid: 1a85d32b60f26d84b9214511014c7857, type: 2}
+  m_Material: {fileID: 13400000, guid: 9e35a98a2dae6a542a8346f7af7e66a0, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -644,6 +645,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1533356306}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1533356311
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1533356306}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b33e1cb50d8f71341afaba844ed33cce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
 --- !u!1 &1909076359
 GameObject:
   m_ObjectHideFlags: 0
@@ -764,11 +777,6 @@ Prefab:
     - target: {fileID: 4698205312845146, guid: 45a2cd48c08961d4e83c62f19349ce21, type: 2}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114401800641548416, guid: 45a2cd48c08961d4e83c62f19349ce21,
-        type: 2}
-      propertyPath: forwardAcceleration
-      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45a2cd48c08961d4e83c62f19349ce21, type: 2}

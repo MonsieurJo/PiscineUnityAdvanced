@@ -59,6 +59,7 @@ public class PlayerManager : MonoBehaviour {
 		if (newVelocity.z > maxSpeed){
 			newVelocity.z = maxSpeed;
 		}
+        
 		else{
 			newVelocity.z += forwardAcceleration * Time.fixedDeltaTime;
 		}
@@ -69,7 +70,13 @@ public class PlayerManager : MonoBehaviour {
         newVelocity.x = Mathf.SmoothDamp(newVelocity.x, targetXVelocity, ref _smoothXVelocity, straffTime);
         newVelocity.y = Mathf.SmoothDamp(newVelocity.y, targetYVelocity, ref _smoothYVelocity, straffTime);
 
-		_rigidbody.velocity = newVelocity;
+        if (newVelocity.z < 0)
+        {
+            newVelocity.z = 0;
+            newVelocity.x = 0;
+        }
+
+        _rigidbody.velocity = newVelocity;
 	}
 	
 	// Update is called once per frame

@@ -5,7 +5,7 @@ using UnityEngine.Assertions;
 
 public class Projectile : MonoBehaviour {
 
-    public float damage = 10f;
+    public float damage = 100f;
 
     private Rigidbody _rigidbody;
 
