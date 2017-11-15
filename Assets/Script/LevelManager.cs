@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-        Assert.IsNull(player);
+        Assert.IsNotNull(player);
     }
 
     private void Start()
