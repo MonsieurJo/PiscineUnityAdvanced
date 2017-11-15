@@ -7,6 +7,8 @@ public class PlayerManager : MonoBehaviour {
 
     public Projectile projectilePrefab;
 
+    public GameObject spawnPosition;
+
     public int maxHealth = 100;
     public float maxSpeed = 100f;
 	public float forwardAcceleration = 20f;
@@ -16,13 +18,16 @@ public class PlayerManager : MonoBehaviour {
 
 
 	private Rigidbody _rigidbody;
+    private Transform _spawnPosition;
 	private float _smoothXVelocity;
 	private float _smoothYVelocity;
     private int _currentHealth;
 
 	private void Awake(){
 		_rigidbody = GetComponent<Rigidbody>();
+        _spawnPosition = spawnPosition.transform;
 		Assert.IsNotNull(_rigidbody);
+        Assert.IsNotNull(_spawnPosition);
 
         Assert.IsNotNull(projectilePrefab);
 	}
@@ -46,7 +51,7 @@ public class PlayerManager : MonoBehaviour {
         Vector3 initialVelocity = _rigidbody.velocity;
         initialVelocity.x = 0f;
         initialVelocity.y = 0f;
-        projectile.Fire(_rigidbody.velocity);
+        projectile.Fire(initialVelocity);
     }
 
     private void FixedUpdate(){

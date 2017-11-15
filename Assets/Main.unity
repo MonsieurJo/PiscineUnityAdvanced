@@ -767,10 +767,9 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 114401800641548416, guid: 45a2cd48c08961d4e83c62f19349ce21,
         type: 2}
-      propertyPath: projectilePrefab
-      value: 
-      objectReference: {fileID: 114932615281373586, guid: 8b9936bba274c5c44ba5e818ad1ffa65,
-        type: 2}
+      propertyPath: forwardAcceleration
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45a2cd48c08961d4e83c62f19349ce21, type: 2}
   m_IsPrefabParent: 0

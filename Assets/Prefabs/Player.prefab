@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4029883316988384}
   - component: {fileID: 33412326731095576}
   - component: {fileID: 23994294537344696}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,7 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4021781838512514}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MissilePosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -52,7 +52,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4837181969286836}
   - component: {fileID: 135854599165736276}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -71,7 +71,7 @@ GameObject:
   - component: {fileID: 92179494196220208}
   - component: {fileID: 124978911604202302}
   - component: {fileID: 81510885830585266}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera TPS
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 4698205312845146}
   - component: {fileID: 54972061206750822}
   - component: {fileID: 114401800641548416}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4986710574153826}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cameras
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 124036682991287768}
   - component: {fileID: 92642268322098026}
   - component: {fileID: 81226199354094636}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera FPS
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 124915431120323078}
   - component: {fileID: 92915344538872552}
   - component: {fileID: 81263968513431586}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Camera Shoulder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,7 +156,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4774619105186216}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Reacteur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 33254494370622000}
   - component: {fileID: 136246181049686328}
   - component: {fileID: 23906720833029998}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ReacteurR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 33660918391491884}
   - component: {fileID: 136327656113876192}
   - component: {fileID: 23906962354735978}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ReacteurL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -645,6 +645,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aabb4cd6218446a41ab3b2027c4a2741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 114932615281373586, guid: 8b9936bba274c5c44ba5e818ad1ffa65,
+    type: 2}
+  spawnPosition: {fileID: 1113492087799364}
+  maxHealth: 100
   maxSpeed: 100
   forwardAcceleration: 10
   straffMaxSpeed: 100
