@@ -5,7 +5,10 @@ using UnityEngine.Assertions;
 
 public class PlayerManager : MonoBehaviour {
 
-	public float maxSpeed = 100f;
+    public Projectile projectilePrefab;
+
+    public int maxHealth = 100;
+    public float maxSpeed = 100f;
 	public float forwardAcceleration = 20f;
 
     public float straffMaxSpeed = 100f;
@@ -19,16 +22,34 @@ public class PlayerManager : MonoBehaviour {
 
 	private void Awake(){
 		_rigidbody = GetComponent<Rigidbody>();
-        _currentHealth = 1;
 		Assert.IsNotNull(_rigidbody);
+
+        Assert.IsNotNull(projectilePrefab);
 	}
 
 	// Use this for initialization
 	void Start () {
-		
-	}
+        _currentHealth = maxHealth;
+    }
 
-	private void FixedUpdate(){
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            SpawnProjectile();
+        }
+    }
+
+    private void SpawnProjectile()
+    {
+        Projectile projectile = (Projectile)Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        Vector3 initialVelocity = _rigidbody.velocity;
+        initialVelocity.x = 0f;
+        initialVelocity.y = 0f;
+        projectile.Fire(_rigidbody.velocity);
+    }
+
+    private void FixedUpdate(){
 		Vector3 newVelocity = _rigidbody.velocity;
 		if (newVelocity.z > maxSpeed){
 			newVelocity.z = maxSpeed;
@@ -48,8 +69,8 @@ public class PlayerManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	private void LateUpdate () {
-		Debug.Log(_rigidbody.velocity.z);
-        Debug.Log(LevelManager.Instance.RunningTime);
+		//Debug.Log(_rigidbody.velocity.z);
+        //Debug.Log(LevelManager.Instance.RunningTime);
 	}
 
     public void Kill()
