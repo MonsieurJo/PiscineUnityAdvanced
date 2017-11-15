@@ -494,6 +494,12 @@ GameObject:
   m_PrefabParentObject: {fileID: 1711665667952480, guid: 45a2cd48c08961d4e83c62f19349ce21,
     type: 2}
   m_PrefabInternal: {fileID: 1845469877}
+--- !u!114 &1461090239 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114401800641548416, guid: 45a2cd48c08961d4e83c62f19349ce21,
+    type: 2}
+  m_PrefabInternal: {fileID: 1845469877}
+  m_Script: {fileID: 11500000, guid: aabb4cd6218446a41ab3b2027c4a2741, type: 3}
 --- !u!1001 &1494500625
 Prefab:
   m_ObjectHideFlags: 0
@@ -548,6 +554,11 @@ Prefab:
       propertyPath: cameraFPS
       value: 
       objectReference: {fileID: 348662082}
+    - target: {fileID: 114390225088167578, guid: 9bd4a87d0ea487e47be3949f769107ff,
+        type: 2}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1461090239}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9bd4a87d0ea487e47be3949f769107ff, type: 2}
   m_IsPrefabParent: 0

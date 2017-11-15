@@ -110,6 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6849cd27a91453047b4780030c85d8ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
 --- !u!114 &114659715378438334
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,3 +125,4 @@ MonoBehaviour:
   cameraTPS: {fileID: 0}
   cameraShoulder: {fileID: 0}
   cameraFPS: {fileID: 0}
+  currentCamera: {fileID: 0}
