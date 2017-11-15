@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class AutoMoveCorrection : MonoBehaviour {
+public class PlayerManager : MonoBehaviour {
 
 	public float maxSpeed = 100f;
 	public float forwardAcceleration = 20f;
@@ -15,9 +15,11 @@ public class AutoMoveCorrection : MonoBehaviour {
 	private Rigidbody _rigidbody;
 	private float _smoothXVelocity;
 	private float _smoothYVelocity;
+    private int _currentHealth;
 
 	private void Awake(){
 		_rigidbody = GetComponent<Rigidbody>();
+        _currentHealth = 1;
 		Assert.IsNotNull(_rigidbody);
 	}
 
@@ -47,5 +49,12 @@ public class AutoMoveCorrection : MonoBehaviour {
 	// Update is called once per frame
 	private void LateUpdate () {
 		Debug.Log(_rigidbody.velocity.z);
+        Debug.Log(LevelManager.Instance.RunningTime);
 	}
+
+    public void Kill()
+    {
+        _currentHealth = 0;
+        LevelManager.Instance.PlayerDeath();
+    }
 }
