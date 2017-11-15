@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 23093057810532082}
   - component: {fileID: 54425432880768338}
   - component: {fileID: 75578796350206780}
+  - component: {fileID: 114471429990253740}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -44,6 +45,7 @@ GameObject:
   - component: {fileID: 23795335779399802}
   - component: {fileID: 54295598122527352}
   - component: {fileID: 75821366562924480}
+  - component: {fileID: 114959142083349310}
   m_Layer: 0
   m_Name: Missile
   m_TagString: Untagged
@@ -237,6 +239,30 @@ ConstantForce:
   m_RelativeForce: {x: 0, y: 0, z: 0}
   m_Torque: {x: 0, y: 0, z: 0}
   m_RelativeTorque: {x: 0, y: 0, z: 0}
+--- !u!114 &114471429990253740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1293847931305656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f63e212335a1e49478bb1cf3504c7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+--- !u!114 &114959142083349310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1365066663665112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f63e212335a1e49478bb1cf3504c7e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
 --- !u!136 &136071222984651772
 CapsuleCollider:
   m_ObjectHideFlags: 1
