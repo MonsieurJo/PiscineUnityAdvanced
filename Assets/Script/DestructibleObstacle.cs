@@ -15,11 +15,15 @@ public class DestructibleObstacle : MonoBehaviour, ITakeDamage {
 	
 	public void TakeDamage(float damage, GameObject instigator)
     {
-        _currentHealth -= damage;
-        if (_currentHealth <= 0f)
+        if (this.enabled)
         {
-            Kill();
+            _currentHealth -= damage;
+            if (_currentHealth <= 0f)
+            {
+                Kill();
+            }
         }
+        
     }
 
     public void Kill()
