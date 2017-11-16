@@ -90,4 +90,9 @@ public class PlayerManager : MonoBehaviour {
         _currentHealth = 0;
         LevelManager.Instance.PlayerDeath();
     }
+
+    public void Win()
+    {
+        LevelManager.Instance.PlayerWin();
+    }
 }

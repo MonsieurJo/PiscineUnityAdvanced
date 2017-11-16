@@ -31,4 +31,9 @@ public class LevelManager : MonoBehaviour
         CameraManager.Instance.currentCamera.transform.parent = null;
         Destroy(player.gameObject);
     }
+
+    public void PlayerWin()
+    {
+        CameraManager.Instance.currentCamera.transform.parent = null;
+    }
 }

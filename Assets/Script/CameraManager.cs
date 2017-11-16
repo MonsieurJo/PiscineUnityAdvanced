@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class CameraManager : MonoBehaviour {
 
@@ -9,14 +10,18 @@ public class CameraManager : MonoBehaviour {
     public GameObject cameraTPS;
     public GameObject cameraShoulder;
     public GameObject cameraFPS;
+    public GameObject player;
 
     public GameObject currentCamera;
 
     private int _cameraUsed = 1;
+    private GameObject _player;
 
     private void Awake()
     {
         Instance = this;
+        _player = player;
+        Assert.IsNotNull(_player);
     }
 
     // Update is called once per frame
@@ -32,26 +37,29 @@ public class CameraManager : MonoBehaviour {
                 _cameraUsed++;
             }
         }
-        switch (_cameraUsed)
+        if (_player)
         {
-            case 1:
-                cameraTPS.SetActive(true);
-                currentCamera = cameraTPS;
-                cameraFPS.SetActive(false);
-                break;
-            case 2:
-                cameraShoulder.SetActive(true);
-                currentCamera = cameraShoulder;
-                cameraTPS.SetActive(false);
-                break;
-            case 3:
-                cameraFPS.SetActive(true);
-                currentCamera = cameraFPS;
-                cameraShoulder.SetActive(false);
-                break;
-            default:
-                Debug.Log("Erreur Camera");
-                break;
+            switch (_cameraUsed)
+            {
+                case 1:
+                    cameraTPS.SetActive(true);
+                    currentCamera = cameraTPS;
+                    cameraFPS.SetActive(false);
+                    break;
+                case 2:
+                    cameraShoulder.SetActive(true);
+                    currentCamera = cameraShoulder;
+                    cameraTPS.SetActive(false);
+                    break;
+                case 3:
+                    cameraFPS.SetActive(true);
+                    currentCamera = cameraFPS;
+                    cameraShoulder.SetActive(false);
+                    break;
+                default:
+                    Debug.Log("Erreur Camera");
+                    break;
+            }
         }
     }
 }
