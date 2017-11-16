@@ -34,7 +34,7 @@ public class PlayerManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        _currentHealth = maxHealth;
+        //_currentHealth = maxHealth;
     }
 
     private void Update()
@@ -87,7 +87,7 @@ public class PlayerManager : MonoBehaviour {
 
     public void Kill()
     {
-        _currentHealth = 0;
+        //_currentHealth = 0;
         LevelManager.Instance.PlayerDeath();
     }
 
