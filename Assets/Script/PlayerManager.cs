@@ -10,6 +10,7 @@ public class PlayerManager : MonoBehaviour {
     public GameObject spawnPosition;
 
     public int maxHealth = 100;
+    public int maxAmmo = 50;
     public float maxSpeed = 100f;
 	public float forwardAcceleration = 20f;
 
@@ -22,10 +23,12 @@ public class PlayerManager : MonoBehaviour {
 	private float _smoothXVelocity;
 	private float _smoothYVelocity;
     private int _currentHealth;
+    private int _currentAmmo;
 
 	private void Awake(){
 		_rigidbody = GetComponent<Rigidbody>();
         _spawnPosition = spawnPosition.transform;
+        _currentAmmo = maxAmmo;
 		Assert.IsNotNull(_rigidbody);
         Assert.IsNotNull(_spawnPosition);
 
@@ -39,9 +42,10 @@ public class PlayerManager : MonoBehaviour {
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && _currentAmmo > 0)
         {
             SpawnProjectile();
+            _currentAmmo--;
         }
     }
 
@@ -54,13 +58,16 @@ public class PlayerManager : MonoBehaviour {
         projectile.Fire(initialVelocity);
     }
 
-    private void FixedUpdate(){
+    private void FixedUpdate()
+    {
 		Vector3 newVelocity = _rigidbody.velocity;
-		if (newVelocity.z > maxSpeed){
+		if (newVelocity.z > maxSpeed)
+        {
 			newVelocity.z = maxSpeed;
 		}
         
-		else{
+		else
+        {
 			newVelocity.z += forwardAcceleration * Time.fixedDeltaTime;
 		}
 
@@ -80,7 +87,8 @@ public class PlayerManager : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	private void LateUpdate () {
+	private void LateUpdate ()
+    {
 		//Debug.Log(_rigidbody.velocity.z);
         //Debug.Log(LevelManager.Instance.RunningTime);
 	}
@@ -94,5 +102,13 @@ public class PlayerManager : MonoBehaviour {
     public void Win()
     {
         LevelManager.Instance.PlayerWin();
+    }
+
+    public void PickUpAmmo()
+    {
+        if (_currentAmmo < maxAmmo)
+        {
+            _currentAmmo++;
+        }
     }
 }
